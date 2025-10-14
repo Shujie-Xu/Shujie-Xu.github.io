@@ -80,7 +80,7 @@ theme = 'PaperMod'
   [params.profileMode]
     enabled = true
     title = "Shujie Xu"
-    subtitle = "[你的头衔，例如：博士生 / 研究员]\n[你的学校或机构]\n📍 [你所在的城市，例如：Evanston, IL]"
+    subtitle = "我是皇帝"
     # 你的头像图片，放在 `static/` 目录下
     imageUrl = "/profile.jpg"
     imageWidth = 120
