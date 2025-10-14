@@ -51,19 +51,19 @@ theme = 'PaperMod'
   # --- 3.2 Social Icons ---
   [[params.socialIcons]]
     name = "email"
-    url = "mailto:your.email@example.com"
+    url = "mailto:shujiexu1219@outlook.com"
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/Shujie-Xu"
-  [[params.socialIcons]]
-    name = "googlescholar"
-    url = "https://scholar.google.com/citations?user=你的GoogleScholarID" # 替换成你的Google Scholar链接
+  # [[params.socialIcons]]
+   # name = "googlescholar"
+   # url = "https://scholar.google.com/citations?user=你的GoogleScholarID" # 替换成你的Google Scholar链接
   [[params.socialIcons]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/你的LinkedIn用户名/"
   [[params.socialIcons]]
     name = "twitter"
-    url = "https://twitter.com/你的Twitter用户名" # 如果你使用X(Twitter)
+    url = "https://twitter.com/shujie_xu_"
 
   # --- 3.3 Post Page Settings ---
   ShowReadingTime = true  
@@ -80,16 +80,14 @@ theme = 'PaperMod'
   [params.profileMode]
     enabled = true
     title = "Shujie Xu"
-    subtitle = "我是皇帝"
-    # 你的头像图片，放在 `static/` 目录下
+    subtitle = ""
     imageUrl = "/profile.jpg"
     imageWidth = 120
     imageHeight = 120
-    imageTitle = "我的头像"
+    imageTitle = ""
 
 
 # --- 4. Taxonomies ---
-# 用于组织你的出版物或项目
 [taxonomies]
   category = "categories"
   tag = "tags"
@@ -99,16 +97,15 @@ theme = 'PaperMod'
 # --- 5. Markup Configuration ---
 [markup]
   [markup.goldmark.renderer]
-    unsafe = true # 必须设置为 true 才能渲染自定义的 HTML 和 shortcodes
+    unsafe = true
 
-  # 配置目录 (Table of Contents)
+  # Table of Contents
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
     ordered = false
 
-  # --- 5.1 LaTeX 数学公式支持 ---
-  # 启用 KaTeX 来渲染 LaTeX 公式
+  # --- 5.1 LaTeX ---
   [markup.goldmark.extensions.passthrough]
     enable = true
     [markup.goldmark.extensions.passthrough.delimiters]
@@ -116,8 +113,7 @@ theme = 'PaperMod'
       inline = [['$', '$']]
 
 
-# --- 6. KaTeX 全局配置 (Needed for LaTeX) ---
-# 为了让 KaTeX 生效，需要在这里引入它的 CSS 和 JS
+# --- 6. Needed for LaTeX ---
 [outputs]
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
