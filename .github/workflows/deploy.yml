@@ -1,43 +1,49 @@
-# 网站部署自动化脚本
+# 为你的项目构建和部署 Hugo 网站到 GitHub Pages
 name: Deploy Hugo site to Pages
 
 on:
-  # 当代码被推送到 main 分支时触发
+  # 在推送到 `main` 分支时运行
   push:
     branches:
       - main
-  # 允许你手动在 Actions 页面触发此工作流
+  # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+# GITHUB_TOKEN 的默认权限，以允许部署到 GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 只允许一个并发部署，跳过排队中的旧任务
+# 只允许一个并发部署，跳过在进行中的运行和最新排队的运行之间的运行。
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+# 设置默认值
+defaults:
+  run:
+    shell: bash
 
 jobs:
   # 构建任务
   build:
-    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统作为运行环境
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout # 第一步：检出你的代码
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.124.1/hugo_extended_0.124.1_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Hugo # 第二步：安装 Hugo
-        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest' # 使用最新版本的 Hugo
-          extended: true
-
-      - name: Build # 第三步：以最明确的方式构建生产版本的网站
-        run: hugo --minify --environment production --baseURL "https://Shujie-Xu.github.io/"
-
-      - name: Upload artifact # 第四步：打包构建好的网站文件
+          submodules: true  # 拉取 Git submodule (你的主题)
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Hugo
+        run: hugo --gc --minify # 运行 hugo 命令构建网站
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
@@ -48,8 +54,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build # 依赖于“构建任务”成功完成
+    needs: build
     steps:
-      - name: Deploy to GitHub Pages # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
