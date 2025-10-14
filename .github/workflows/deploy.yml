@@ -34,10 +34,8 @@ jobs:
           hugo-version: 'latest' # 使用最新版本的 Hugo
           extended: true
 
-      - name: Build # 第三步：构建网站
-        env:
-          HUGO_ENV: production
-        run: hugo --minify # 运行 hugo 命令生成静态文件到 public 目录
+      - name: Build # 第三步：以最明确的方式构建生产版本的网站
+        run: hugo --minify --environment production --baseURL "https://Shujie-Xu.github.io/"
 
       - name: Upload artifact # 第四步：打包构建好的网站文件
         uses: actions/upload-pages-artifact@v3
