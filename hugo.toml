@@ -4,59 +4,52 @@ title = 'Shujie XU'
 theme = 'PaperMod'
 
 
-# --- 2. 顶部主菜单 (Main Menu Navigation) ---
-# 这是你网站顶部的导航栏。`weight`决定了显示的顺序（数字越小越靠前）。
+# --- 2. Main Menu Navigation ---
 [menu]
   [[menu.main]]
     identifier = "about"
-    name = "关于我 (About)"
+    name = "About"
     url = "/about/"
     weight = 10
   [[menu.main]]
     identifier = "research"
-    name = "研究方向 (Research)"
+    name = "Research"
     url = "/research/"
     weight = 20
   [[menu.main]]
     identifier = "publications"
-    name = "学术成果 (Publications)"
+    name = "Publications"
     url = "/publications/"
     weight = 30
   [[menu.main]]
     identifier = "projects"
-    name = "项目 (Projects)"
+    name = "Projects"
     url = "/projects/"
     weight = 40
   [[menu.main]]
     identifier = "cv"
-    name = "简历 (CV)"
+    name = "CV"
     # 直接链接到你上传的PDF文件，这个文件需要放在 `static/` 目录下
     url = "/CV_Shujie_Xu.pdf"
     weight = 50
 
 
-# --- 3. PaperMod 主题核心参数 (Theme Parameters) ---
+# --- 3. PaperMod (Theme Parameters) ---
 [params]
-  # 默认主题模式 ('auto', 'light', 'dark')
+  # ('auto', 'light', 'dark')
   defaultTheme = "auto"
-  # 作者信息
-  author = "树捷 (Shujie Xu)"
-  # 网站描述
-  description = "许树捷的学术主页，关注于[你的研究领域]。"
-  # 搜索引擎优化：网站图片
-  images = ["/profile.jpg"] # 你的头像图片，放在 `static/` 目录下
+  author = "Shujie XU"
+  description = ""
+  images = ["/profile.jpg"] #  `static/` 
 
-  # --- 3.1 首页配置 (Homepage / Profile Mode) ---
-  # PaperMod 的特色功能，非常适合做个人主页
+  # --- 3.1 Homepage / Profile Mode ---
   [params.homeInfoParams]
-    Title = "你好，我是许树捷 👋"
+    Title = "Hi"
     Content = """
-欢迎来到我的个人主页。我是一名专注于 [你的研究领域，例如：人工智能、计算社会科学等] 的研究者。
-目前就读于 [你的学校]，隶属于 [你的院系或实验室]。
-我的研究兴趣包括 [兴趣1]、[兴趣2] 和 [兴趣3]。
-"""
 
-  # --- 3.2 社交媒体图标 (Social Icons) ---
+    """
+
+  # --- 3.2 Social Icons ---
   # 在首页和侧边栏显示的社交链接
   [[params.socialIcons]]
     name = "email"
@@ -74,23 +67,21 @@ theme = 'PaperMod'
     name = "twitter"
     url = "https://twitter.com/你的Twitter用户名" # 如果你使用X(Twitter)
 
-  # --- 3.3 文章页面配置 (Post Page Settings) ---
-  ShowReadingTime = true      # 显示阅读时间
-  ShowShareButtons = true     # 显示分享按钮
-  ShowPostNavLinks = true     # 显示上一篇/下一篇文章导航
-  ShowBreadCrumbs = true      # 显示面包屑导航
-  ShowCodeCopyButtons = true  # 显示代码块的复制按钮
-  ShowLastMod = true          # 显示最后修改时间
+  # --- 3.3 Post Page Settings ---
+  ShowReadingTime = true  
+  ShowShareButtons = true 
+  ShowPostNavLinks = true   
+  ShowBreadCrumbs = true    
+  ShowCodeCopyButtons = true  
+  ShowLastMod = true     
 
-  # --- 3.4 网站功能开关 (Feature Toggles) ---
-  # 启用网站内搜索
+  # --- 3.4 Feature Toggles ---
   [params.search]
     enable = true
 
-  # 启用头像
   [params.profileMode]
     enabled = true
-    title = "许树捷 (Shujie Xu)"
+    title = "Shujie Xu"
     subtitle = "[你的头衔，例如：博士生 / 研究员]\n[你的学校或机构]\n📍 [你所在的城市，例如：Evanston, IL]"
     # 你的头像图片，放在 `static/` 目录下
     imageUrl = "/profile.jpg"
@@ -99,7 +90,7 @@ theme = 'PaperMod'
     imageTitle = "我的头像"
 
 
-# --- 4. 内容分类 (Taxonomies) ---
+# --- 4. Taxonomies ---
 # 用于组织你的出版物或项目
 [taxonomies]
   category = "categories"
@@ -107,9 +98,8 @@ theme = 'PaperMod'
   series = "series"
 
 
-# --- 5. Markdown 渲染配置 (Markup Configuration) ---
+# --- 5. Markup Configuration ---
 [markup]
-  # 配置 Markdown 渲染器 Goldmark
   [markup.goldmark.renderer]
     unsafe = true # 必须设置为 true 才能渲染自定义的 HTML 和 shortcodes
 
