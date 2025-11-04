@@ -1,8 +1,12 @@
+# ============================================
+# Hugo Configuration File for Academic Website
+# ============================================
+
+# --- 1. Basic Site Settings ---
 baseURL = "https://Shujie-Xu.github.io/"
 languageCode = 'en-us'
 title = 'Shujie XU'
 theme = 'PaperMod'
-
 
 # --- 2. Main Menu Navigation ---
 [menu]
@@ -11,81 +15,108 @@ theme = 'PaperMod'
     name = "About"
     url = "/about/"
     weight = 10
+  
   [[menu.main]]
     identifier = "research"
     name = "Research"
     url = "/research/"
     weight = 20
+  
   [[menu.main]]
     identifier = "publications"
     name = "Publications"
     url = "/publications/"
     weight = 30
+  
   [[menu.main]]
     identifier = "projects"
     name = "Projects"
     url = "/projects/"
     weight = 40
+  
   [[menu.main]]
     identifier = "cv"
     name = "CV"
     url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
     weight = 50
 
-
-# --- 3. PaperMod (Theme Parameters) ---
+# --- 3. PaperMod Theme Parameters ---
 [params]
-  # ('auto', 'light', 'dark')
+  # Theme mode ('auto', 'light', 'dark')
   defaultTheme = "auto"
+  
+  # Author and meta description
   author = "Shujie XU"
-  description = ""
-  images = ["/profile.jpg"] #  `static/` 
+  description = "Applied Microeconomist studying information frictions and firm behavior"
+  
+  # Social media image (for sharing previews)
+  images = ["/profile.jpg"]
 
-  # --- 3.1 Homepage / Profile Mode ---
+  # --- 3.1 Homepage / Profile Mode (MODIFIED) ---
   [params.homeInfoParams]
-    Title = "Hi"
+    Title = "Shujie Xu"
     Content = """
+I am a master's student in Applied Economics (CUHK) and Social & Economic Policy (Northwestern), graduating December 2025.
 
+I study how **information frictions** and **institutional contexts** shape corporate behavior and market outcomes, using computational text analysis and causal inference methods.
+
+**I am applying for Economics PhD programs for Fall 2026.**
     """
 
-  # --- 3.2 Social Icons ---
+  # --- 3.2 Profile Mode Settings (MODIFIED) ---
+  [params.profileMode]
+    enabled = true
+    title = "Shujie Xu"
+    subtitle = "Applied Microeconomics | Computational Methods"  # ADDED
+    imageUrl = "/profile.jpg"
+    imageWidth = 150      # CHANGED from 120
+    imageHeight = 150     # CHANGED from 120
+    imageTitle = "Shujie Xu"  # ADDED for accessibility
+
+  # --- 3.3 Social Icons ---
   [[params.socialIcons]]
     name = "email"
     url = "mailto:shujiexu1219@outlook.com"
+  
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/Shujie-Xu"
+  
+  # Uncomment when you have Google Scholar profile
   # [[params.socialIcons]]
-   # name = "googlescholar"
-   # url = "https://scholar.google.com/citations?user=你的GoogleScholarID" # 替换成你的Google Scholar链接
+  #   name = "googlescholar"
+  #   url = "https://scholar.google.com/citations?user=YOUR_ID"
+  
   [[params.socialIcons]]
     name = "linkedin"
-    url = "https://www.linkedin.com/in/你的LinkedIn用户名/"
+    url = "https://www.linkedin.com/in/shujie-xu/"  # UPDATE with your actual username
+  
   [[params.socialIcons]]
     name = "twitter"
     url = "https://twitter.com/shujie_xu_"
 
-  # --- 3.3 Post Page Settings ---
-  ShowReadingTime = true  
-  ShowShareButtons = true 
-  ShowPostNavLinks = true   
-  ShowBreadCrumbs = true    
-  ShowCodeCopyButtons = true  
-  ShowLastMod = true     
+  # --- 3.4 Post Page Settings ---
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowLastMod = true
 
-  # --- 3.4 Feature Toggles ---
+  # --- 3.5 Feature Toggles ---
   [params.search]
     enable = true
 
-  [params.profileMode]
-    enabled = true
-    title = "Shujie Xu"
-    subtitle = ""
-    imageUrl = "/profile.jpg"
-    imageWidth = 120
-    imageHeight = 120
-    imageTitle = ""
-
+  # --- 3.6 LaTeX/KaTeX Assets (MODIFIED for better organization) ---
+  [params.assets]
+    disableFingerprinting = true
+    # KaTeX CSS
+    css = ["https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"]
+    # KaTeX JS
+    js = [
+      "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js",
+      "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    ]
 
 # --- 4. Taxonomies ---
 [taxonomies]
@@ -93,27 +124,26 @@ theme = 'PaperMod'
   tag = "tags"
   series = "series"
 
-
 # --- 5. Markup Configuration ---
 [markup]
+  # --- 5.1 Goldmark (Markdown renderer) ---
   [markup.goldmark.renderer]
-    unsafe = true
+    unsafe = true  # Allow HTML in markdown
 
-  # Table of Contents
+  # --- 5.2 Table of Contents ---
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
     ordered = false
 
-  # --- 5.1 LaTeX ---
+  # --- 5.3 LaTeX/Math Support (Passthrough for $ delimiters) ---
   [markup.goldmark.extensions.passthrough]
     enable = true
     [markup.goldmark.extensions.passthrough.delimiters]
       block = [['$$', '$$']]
       inline = [['$', '$']]
 
-
-# --- 6. Needed for LaTeX ---
+# --- 6. Output Formats (Needed for search and RSS) ---
 [outputs]
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
@@ -121,9 +151,15 @@ theme = 'PaperMod'
   taxonomy = ["HTML", "RSS"]
   term = ["HTML", "RSS"]
 
-[params.assets]
-  disableFingerprinting = true
-  # KaTeX CSS
-  css = ["https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"]
-  # KaTeX JS
-  js = ["https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js", "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"]
+# --- 7. Build Settings (ADDED for better performance) ---
+[build]
+  writeStats = true
+
+# --- 8. Privacy Settings (ADDED - good practice for academic sites) ---
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true  # Change to false if you add Google Analytics later
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
