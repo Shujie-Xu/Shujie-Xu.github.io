@@ -2,8 +2,8 @@
   "htmlElements": {
     "tags": [
       "a",
-      "article",
       "body",
+      "br",
       "button",
       "circle",
       "div",
@@ -11,8 +11,10 @@
       "footer",
       "h1",
       "h2",
+      "h3",
       "head",
       "header",
+      "hr",
       "html",
       "img",
       "li",
@@ -28,6 +30,7 @@
       "rect",
       "script",
       "span",
+      "strong",
       "style",
       "svg",
       "title",
@@ -35,11 +38,7 @@
     ],
     "classes": [
       "active",
-      "entry-content",
-      "entry-footer",
-      "entry-header",
-      "entry-hint-parent",
-      "entry-link",
+      "anchor",
       "footer",
       "header",
       "list",
@@ -50,13 +49,6 @@
       "not-found",
       "page-header",
       "post-content",
-      "post-entry",
-      "post-footer",
-      "post-header",
-      "post-meta",
-      "post-single",
-      "post-tags",
-      "post-title",
       "profile",
       "profile_inner",
       "social-icons",
@@ -64,12 +56,24 @@
       "top-link"
     ],
     "ids": [
+      "computational-skills",
+      "current-work",
+      "data-projects",
+      "education",
+      "enterprise-supply-chain-risk-and-network-status",
       "menu",
       "moon",
+      "open-source-contributions",
+      "political-attention-partisan-alignment-and-corporate-performance",
+      "research-assistance",
+      "research-interests",
       "sun",
+      "the-numbers-game-effects-of-listing-pricing-formats-in-housing-bargaining",
       "theme-toggle",
       "top",
-      "top-link"
+      "top-link",
+      "work-in-progress",
+      "working-papers"
     ]
   }
 }
