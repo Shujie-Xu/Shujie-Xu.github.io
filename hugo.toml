@@ -58,9 +58,16 @@ theme = 'PaperMod'
     Content = """
 I am a master's student in Applied Economics (CUHK) and Social & Economic Policy (Northwestern), graduating December 2025.
 
-I study how **information frictions** and **institutional contexts** shape corporate behavior and market outcomes, using computational text analysis and causal inference methods.
+My research examines how **information frictions** and **institutional contexts** shape firm behavior and market outcomes. I combine computational text analysis with causal inference methods to study strategic decision-making in corporate and urban settings.
+
+Currently, I work with **Prof. Franklin Qian** at UNC Kenan-Flagler studying housing market dynamics. Previously, I worked with **Prof. Letian Zhang** at Harvard Business School (now Northwestern Kellogg) on political economy, and **Prof. Yue Tang** at SWUFE on corporate finance.
+
+My undergraduate thesis examined corporate political engagement using natural language processing on earnings calls and policy documents.
 
 **I am applying for Economics PhD programs for Fall 2026.**
+
+**Research Interests:** Applied Microeconomics, Corporate Finance, Urban Economics  
+**Methods:** Natural language processing, causal inference, computational text analysis
     """
 
   # --- 3.2 Profile Mode Settings (MODIFIED) ---

@@ -4,40 +4,42 @@ title: "Research"
 
 ## Working Papers
 
-### Political Attention, Partisan Alignment, and Corporate Performance
-*Undergraduate Thesis, May 2024*  
-**Advisor:** Prof. Yue Tang (SWUFE)
+**Political Attention, Partisan Alignment, and Corporate Performance**  
+*Undergraduate Thesis, May 2024* | Advisor: Prof. Yue Tang (SWUFE)
 
-I develop text-based measures of corporate political engagement using earnings call transcripts and examine their relationship with firm performance. Using Word2Vec embeddings and semi-supervised learning on 220M+ tokens, I construct firm-level measures of Political Attention and Partisan Alignment.
-
-**Key Finding:** A 1-percentage-point increase in Political Attention is associated with 2.0pp higher ROA, with 15.8% of this effect mediated through lobbying expenditures.
+I develop text-based measures of corporate political engagement using Word2Vec on earnings calls and presidential documents. Findings show 1pp increase in Political Attention associates with 2.0pp higher ROA, with 15.8% mediated through lobbying.
 
 ---
 
 ## Work in Progress
 
-### The Numbers Game: Effects of Listing Pricing Formats in Housing Bargaining
-*with Haaris Mateen, Franklin Qian, Ye Zhang, and Tianxiang Zheng*
+**The Numbers Game: Effects of Listing Price Formats in Housing Bargaining**  
+with Haaris Mateen, Franklin Qian, Ye Zhang, and Tianxiang Zheng
 
-**My contribution:** I designed a text-based measure of seller impatience using Word2Vec embeddings on MLS listing remarks, and conducted demographic heterogeneity analysis using probabilistically matched HMDA-CoreLogic data.
+Examining how round vs. precise listing prices affect housing market outcomes using 80M+ MLS observations.  
+*My role:* Text-based seller sorting measure; demographic heterogeneity analysis using HMDA-CoreLogic matched data.
+
+**Enterprise Supply Chain Risk and Network Status**  
+with Prof. Yue Tang
+
+Network centrality and risk exposure using Chinese corporate disclosures (2012-2021).
 
 ---
 
-### Enterprise Supply Chain Risk and Network Status
-*with Prof. Yue Tang*
+## Research Experience
 
-Using text mining on Chinese corporate annual reports (2012-2021), we examine how firm centrality in supply chain networks affects risk exposure. Preliminary findings suggest central firms exhibit 16% lower disclosed risk.
+**Research Assistant to Prof. Franklin Qian**  
+University of North Carolina, Kenan-Flagler Business School | *March 2025 - Present*  
+Urban economics, housing markets
 
----
+**Research Assistant to Prof. Letian Zhang**  
+Harvard Business School (now Northwestern Kellogg) | *August 2024 - March 2025*  
+Political economy, corporate strategy under institutional constraints  
+- Constructed database of 600+ political leaders with systematic coding
+- Built text corpus of 9,000+ political speeches
 
-## Research Assistance
-
-**Prof. Franklin Qian** (UNC Kenan-Flagler) — Urban Economics, Real Estate  
-*March 2025 - Present*
-
-**Prof. Letian Zhang** (Northwestern Kellogg, formerly HBS) — Political Economy  
-*August 2024 - March 2025*  
-Built datasets of political leaders and speeches for projects examining political institutions and firm strategy.
-
-**Prof. Yue Tang** (SWUFE) — Corporate Finance  
-*February 2023 - January 2024*
+**Research Assistant to Prof. Yue Tang**  
+Southwestern University of Finance and Economics | *February 2023 - January 2024*  
+Corporate finance, supply chain networks  
+- Co-authored working paper on supply chain risk and network centrality
+- Designed text mining pipeline for Chinese corporate disclosures
