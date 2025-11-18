@@ -28,4 +28,4 @@ I study how information design and institutional constraints shape firm and hous
 
 Right now I lead the measurement agenda for a housing bargaining project with Franklin Qian, build political-institution datasets with Letian Zhang, and extend supply-chain risk work with Yue Tang. I'm especially interested in bringing text-based evidence into models of bargaining, sorting, and organizational choice.
 
-I am applying to Economics PhD programs for Fall 2026 and welcome conversations about research assistant opportunities and collaborations. I am also recruiting for full-time pre-doctoral RA roles beginning Summer 2026 to deepen the measurement-heavy agenda I pursue.
+I am applying to Economics PhD programs for Fall 2026 and welcome conversations about research assistant opportunities and collaborations. In parallel, I'm pursuing full-time pre-doctoral RA placements that launch in Summer 2026 to keep scaling these measurement-driven projects before doctoral study.
