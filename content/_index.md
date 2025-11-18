@@ -10,11 +10,11 @@ photo:
   alt: "Portrait of Shujie Xu"
 highlights:
   - label: "Fields"
-    text: "Applied microeconomics · Urban economics · Corporate finance"
+    text: "Applied micro · political economy · urban and regional · organizational behavior"
   - label: "Methods"
-    text: "Text-based measurement · Causal inference · Network analysis"
-  - label: "Current agenda"
-    text: "Housing bargaining, political institutions, and supply-chain resilience"
+    text: "Text-based measurement, causal inference, network + matching, computational RA workflows"
+  - label: "Perspective"
+    text: "Curious about how information design, institutions, and incentives rewrite bargaining stories"
 current:
   - title: "Housing bargaining under listing price formats"
     detail: "Designing seller sorting indices and heterogeneity tests with MLS + HMDA-CoreLogic data."

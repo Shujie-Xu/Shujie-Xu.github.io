@@ -23,7 +23,9 @@
     <div class="container header-inner">
       <a class="site-logo" href="/">
         <span class="site-logo__name">{{ site.Params.name }}</span>
-        <span class="site-logo__role">{{ site.Params.role }}</span>
+        {{ with site.Params.role }}
+        <span class="site-logo__role">{{ . }}</span>
+        {{ end }}
       </a>
       <nav class="site-nav" aria-label="Primary">
         {{ with site.Menus.main }}
@@ -57,9 +59,7 @@
         {{ end }}
       </div>
       <div class="footer-links">
-        {{ range site.Params.social }}
-        <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a>
-        {{ end }}
+        {{ partial "social-icons.html" . }}
       </div>
     </div>
   </footer>

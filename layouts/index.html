@@ -25,6 +25,9 @@
         {{ end }}
       </dl>
       {{ end }}
+      <div class="hero-social">
+        {{ partial "social-icons.html" . }}
+      </div>
     </div>
     <div class="hero-photo">
       {{ $photoSrc := .Params.photo.src }}

@@ -1,0 +1,13 @@
+{{- $links := site.Params.social -}}
+{{- if $links }}
+<ul class="social-icons" role="list">
+  {{- range $links }}
+  {{- $isMail := strings.HasPrefix .url "mailto:" -}}
+  <li>
+    <a href="{{ .url | safeURL }}" {{ if not $isMail }}target="_blank" rel="noopener noreferrer"{{ end }} aria-label="{{ .label }}">
+      {{ partial "svg-icon.html" .icon }}
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}

@@ -22,12 +22,12 @@ title = "Shujie XU"
   [[menu.main]]
     identifier = "cv"
     name = "CV"
-    url = "/files/CV-Shujie_XU.pdf"
+    url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
     weight = 30
 
 [params]
   name = "Shujie Xu"
-  role = "Applied Microeconomics · Computational Text Analysis"
+  role = "Applied Economics & Social Policy · Research Assistant"
   location = "Evanston & Chicago"
   email = "shujiexu1219@outlook.com"
   description = "Applied microeconomist building text-based measurements for markets and firms."
@@ -38,22 +38,27 @@ title = "Shujie XU"
   [[params.social]]
     label = "Email"
     url = "mailto:shujiexu1219@outlook.com"
+    icon = "mail"
 
   [[params.social]]
     label = "LinkedIn"
     url = "https://www.linkedin.com/in/shujie-xu/"
+    icon = "linkedin"
 
   [[params.social]]
     label = "GitHub"
     url = "https://github.com/Shujie-Xu"
+    icon = "github"
 
   [[params.social]]
     label = "Twitter"
     url = "https://twitter.com/shujie_xu_"
+    icon = "twitter"
 
   [[params.social]]
     label = "CV"
-    url = "/files/CV-Shujie_XU.pdf"
+    url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
+    icon = "file"
 
 [taxonomies]
   category = "categories"
