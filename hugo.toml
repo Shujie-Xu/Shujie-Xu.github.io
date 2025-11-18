@@ -11,12 +11,6 @@ theme = 'PaperMod'
 # --- 2. Main Menu Navigation (删除 About，保留其他) ---
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/"
-    weight = 5
-
-  [[menu.main]]
     identifier = "research"
     name = "Research"
     url = "/research/"
