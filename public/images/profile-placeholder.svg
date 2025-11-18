@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d3b66" />
+      <stop offset="100%" stop-color="#5f8cc9" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#grad)" rx="24" />
+  <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="36" fill="#ffffff" opacity="0.9">
+    Shujie Xu
+  </text>
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#ffffff" opacity="0.75">
+    Applied Microeconomics
+  </text>
+</svg>
