@@ -8,77 +8,41 @@ languageCode = 'en-us'
 title = 'Shujie XU'
 theme = 'PaperMod'
 
-# --- 2. Main Menu Navigation ---
+# --- 2. Main Menu Navigation (删除 About，保留其他) ---
 [menu]
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/about/"
-    weight = 10
-  
+    url = "/"
+    weight = 5
+
   [[menu.main]]
     identifier = "research"
     name = "Research"
     url = "/research/"
-    weight = 20
+    weight = 10
   
   [[menu.main]]
     identifier = "publications"
     name = "Publications"
     url = "/publications/"
-    weight = 30
-  
-  [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    url = "/projects/"
-    weight = 40
+    weight = 20
   
   [[menu.main]]
     identifier = "cv"
     name = "CV"
     url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
-    weight = 50
+    weight = 30
 
 # --- 3. PaperMod Theme Parameters ---
 [params]
-  # Theme mode ('auto', 'light', 'dark')
   defaultTheme = "auto"
-  
-  # Author and meta description
   author = "Shujie XU"
   description = "Applied Microeconomist studying information frictions and firm behavior"
-  
-  # Social media image (for sharing previews)
   images = ["/profile.jpg"]
 
-  # --- 3.1 Homepage / Profile Mode (MODIFIED) ---
-  [params.homeInfoParams]
-    Title = "Shujie Xu"
-    Content = """
-I am a master's student in Applied Economics (CUHK) and Social & Economic Policy (Northwestern), graduating December 2025.
-
-My research examines how **information frictions** and **institutional contexts** shape firm behavior and market outcomes. I combine computational text analysis with causal inference methods to study strategic decision-making in corporate and urban settings.
-
-Currently, I work with **Prof. Franklin Qian** at UNC Kenan-Flagler studying housing market dynamics. Previously, I worked with **Prof. Letian Zhang** at Harvard Business School (now Northwestern Kellogg) on political economy, and **Prof. Yue Tang** at SWUFE on corporate finance.
-
-My undergraduate thesis examined corporate political engagement using natural language processing on earnings calls and policy documents.
-
-**I am applying for Economics PhD programs for Fall 2026.**
-
-**Research Interests:** Applied Microeconomics, Corporate Finance, Urban Economics  
-**Methods:** Natural language processing, causal inference, computational text analysis
-    """
-
-  # --- 3.2 Profile Mode Settings (MODIFIED) ---
   [params.profileMode]
-    enabled = true
-    title = "Shujie Xu"
-    subtitle = "Applied Microeconomics | Computational Methods"  # ADDED
-    imageUrl = "/profile.jpg"
-    imageWidth = 150      # CHANGED from 120
-    imageHeight = 150     # CHANGED from 120
-    imageTitle = "Shujie Xu"  # ADDED for accessibility
+    enabled = false
 
   # --- 3.3 Social Icons ---
   [[params.socialIcons]]
@@ -89,37 +53,35 @@ My undergraduate thesis examined corporate political engagement using natural la
     name = "github"
     url = "https://github.com/Shujie-Xu"
   
-  # Uncomment when you have Google Scholar profile
-  # [[params.socialIcons]]
-  #   name = "googlescholar"
-  #   url = "https://scholar.google.com/citations?user=YOUR_ID"
-  
   [[params.socialIcons]]
     name = "linkedin"
-    url = "https://www.linkedin.com/in/shujie-xu/"  # UPDATE with your actual username
+    url = "https://www.linkedin.com/in/shujie-xu/"
   
   [[params.socialIcons]]
     name = "twitter"
     url = "https://twitter.com/shujie_xu_"
+  
+  [[params.socialIcons]]
+    name = "cv"
+    url = "/files/CV-Shujie_XU.pdf"
+    title = "CV"
 
   # --- 3.4 Post Page Settings ---
-  ShowReadingTime = true
-  ShowShareButtons = true
+  ShowReadingTime = false
+  ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
-  ShowLastMod = true
+  ShowLastMod = false
 
   # --- 3.5 Feature Toggles ---
   [params.search]
     enable = true
 
-  # --- 3.6 LaTeX/KaTeX Assets (MODIFIED for better organization) ---
+  # --- 3.6 LaTeX/KaTeX Assets ---
   [params.assets]
     disableFingerprinting = true
-    # KaTeX CSS
     css = ["https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"]
-    # KaTeX JS
     js = [
       "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js",
       "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
@@ -133,24 +95,21 @@ My undergraduate thesis examined corporate political engagement using natural la
 
 # --- 5. Markup Configuration ---
 [markup]
-  # --- 5.1 Goldmark (Markdown renderer) ---
   [markup.goldmark.renderer]
-    unsafe = true  # Allow HTML in markdown
+    unsafe = true
 
-  # --- 5.2 Table of Contents ---
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
     ordered = false
 
-  # --- 5.3 LaTeX/Math Support (Passthrough for $ delimiters) ---
   [markup.goldmark.extensions.passthrough]
     enable = true
     [markup.goldmark.extensions.passthrough.delimiters]
       block = [['$$', '$$']]
       inline = [['$', '$']]
 
-# --- 6. Output Formats (Needed for search and RSS) ---
+# --- 6. Output Formats ---
 [outputs]
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML"]
@@ -158,14 +117,14 @@ My undergraduate thesis examined corporate political engagement using natural la
   taxonomy = ["HTML", "RSS"]
   term = ["HTML", "RSS"]
 
-# --- 7. Build Settings (ADDED for better performance) ---
+# --- 7. Build Settings ---
 [build]
   writeStats = true
 
-# --- 8. Privacy Settings (ADDED - good practice for academic sites) ---
+# --- 8. Privacy Settings ---
 [privacy]
   [privacy.googleAnalytics]
-    disable = true  # Change to false if you add Google Analytics later
+    disable = true
   [privacy.twitter]
     enableDNT = true
   [privacy.youtube]

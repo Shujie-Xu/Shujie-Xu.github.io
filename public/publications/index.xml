@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Publications on Shujie XU</title>
-    <link>http://localhost:1313/publications/</link>
+    <link>https://Shujie-Xu.github.io/publications/</link>
     <description>Recent content in Publications on Shujie XU</description>
     <image>
       <title>Shujie XU</title>
-      <url>http://localhost:1313/profile.jpg</url>
-      <link>http://localhost:1313/profile.jpg</link>
+      <url>https://Shujie-Xu.github.io/profile.jpg</url>
+      <link>https://Shujie-Xu.github.io/profile.jpg</link>
     </image>
     <generator>Hugo -- 0.151.0</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/publications/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Shujie-Xu.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

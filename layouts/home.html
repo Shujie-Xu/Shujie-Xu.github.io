@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $photo := "" }}
+{{ with .Params.photo }}
+  {{ with .src }}
+    {{ $photo = . | absURL }}
+  {{ end }}
+{{ else }}
+  {{ if site.Params.images }}
+    {{ $photo = (index site.Params.images 0) | absURL }}
+  {{ end }}
+{{ end }}
+<section class="about-home">
+  <div class="about-home__grid">
+    <div class="about-home__text">
+      {{ with .Params.hero.tagline }}
+      <p class="about-home__eyebrow">{{ . }}</p>
+      {{ end }}
+      <h1 class="about-home__title">{{ .Params.hero.name | default .Title }}</h1>
+      {{ with .Params.hero.location }}
+      <p class="about-home__meta">{{ . }}</p>
+      {{ end }}
+      <div class="about-home__body">
+        {{ .Content }}
+      </div>
+      {{ with .Params.focus }}
+      <dl class="about-home__focus">
+        {{ range . }}
+        <div class="about-home__focus-item">
+          <dt>{{ .label }}</dt>
+          <dd>{{ .text }}</dd>
+        </div>
+        {{ end }}
+      </dl>
+      {{ end }}
+    </div>
+    <div class="about-home__photo">
+      {{ if $photo }}
+      <figure class="about-home__photo-frame">
+        <img src="{{ $photo }}" alt="{{ .Params.photo.alt | default (.Site.Params.author | default .Title) }}" loading="lazy" />
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+  <div class="about-home__social">
+    <span class="about-home__social-label">Connect</span>
+    {{ partial "social_icons.html" (dict "align" "left") }}
+    {{ with .Params.social }}
+    <div class="about-home__social-links">
+      {{ range . }}
+      {{ $isExternal := or (hasPrefix .url "http") (hasPrefix .url "https") }}
+      <a href="{{ .url | safeURL }}" {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

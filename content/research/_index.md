@@ -1,13 +1,12 @@
----
 title: "Research"
 ---
 
 ## Working Papers
 
 **Political Attention, Partisan Alignment, and Corporate Performance**  
-*Undergraduate Thesis, May 2024* | Advisor: Prof. Yue Tang (SWUFE)
+*Undergraduate Thesis, May 2024*
 
-I develop text-based measures of corporate political engagement using Word2Vec on earnings calls and presidential documents. Findings show 1pp increase in Political Attention associates with 2.0pp higher ROA, with 15.8% mediated through lobbying.
+I develop a "policy-taker" view of firms where managers respond to political contexts through disclosure rather than direct political ties. Using semi-supervised NLP on 220M+ earnings call passages and presidential documents, I construct text-based measures of Political Attention and Partisan Alignment that map corporate speech into policy themes. Linking these measures to firm outcomes shows that a one standard deviation increase in Political Attention raises ROA by roughly 2 percentage points, with lobbying expenditure mediating part of the effect and partisan alignment amplifying gains in politically exposed industries.
 
 ---
 
@@ -16,30 +15,22 @@ I develop text-based measures of corporate political engagement using Word2Vec o
 **The Numbers Game: Effects of Listing Price Formats in Housing Bargaining**  
 with Haaris Mateen, Franklin Qian, Ye Zhang, and Tianxiang Zheng
 
-Examining how round vs. precise listing prices affect housing market outcomes using 80M+ MLS observations.  
-*My role:* Text-based seller sorting measure; demographic heterogeneity analysis using HMDA-CoreLogic matched data.
+We examine how round versus precise listing prices shape bargaining power in housing markets by combining 80M+ MLS records with HMDA-CoreLogic matched mortgages. I lead the text-based measurement strategy that flags impatient or strategic sellers from listing remarks using Word2Vec embeddings, design the seller sorting index, and run heterogeneity analyses by neighborhood demographics and price segments. The goal is to open up the mechanism behind seemingly behavioral pricing rules with evidence grounded in text and administrative data.
 
 **Enterprise Supply Chain Risk and Network Status**  
 with Prof. Yue Tang
 
-Network centrality and risk exposure using Chinese corporate disclosures (2012-2021).
+We leverage 10,000+ Chinese annual reports to extract firm-year risk language and overlay it onto a directed supply-chain network for all A-share firms. My focus is on fusing the text-based risk measure with network centrality to trace how position in the production web insulates firms from external shocks, especially during policy or trade disruptions.
 
 ---
 
 ## Research Experience
 
-**Research Assistant to Prof. Franklin Qian**  
-University of North Carolina, Kenan-Flagler Business School | *March 2025 - Present*  
-Urban economics, housing markets
+**Franklin Qian, UNC Kenan-Flagler** · Mar 2025 – present  
+Design seller sorting measures, build Word2Vec-based impatience scores for MLS text, and lead HMDA-CoreLogic matching to evaluate demographic heterogeneity.
 
-**Research Assistant to Prof. Letian Zhang**  
-Harvard Business School (now Northwestern Kellogg) | *August 2024 - March 2025*  
-Political economy, corporate strategy under institutional constraints  
-- Constructed database of 600+ political leaders with systematic coding
-- Built text corpus of 9,000+ political speeches
+**Letian Zhang, Harvard Business School / Northwestern Kellogg** · Aug 2024 – Mar 2025  
+Built longitudinal database of 600+ political leaders with coded ideology, constraints, and transitions; assembled a multilingual corpus of 9,000+ political speeches for future text analysis on corporate human-capital responses.
 
-**Research Assistant to Prof. Yue Tang**  
-Southwestern University of Finance and Economics | *February 2023 - January 2024*  
-Corporate finance, supply chain networks  
-- Co-authored working paper on supply chain risk and network centrality
-- Designed text mining pipeline for Chinese corporate disclosures
+**Yue Tang, Southwestern University of Finance and Economics** · Feb 2023 – Jan 2024  
+Co-authored the initial draft of a supply-chain risk paper by creating a Chinese-language text-mining pipeline and estimating fixed-effects models tying network centrality to risk exposure.
