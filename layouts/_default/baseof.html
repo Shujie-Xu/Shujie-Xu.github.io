@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}" />
+  <meta name="author" content="{{ site.Params.name }}" />
+  <title>
+    {{- if .IsHome -}}
+      {{ site.Params.name }} · {{ site.Params.role }}
+    {{- else -}}
+      {{ .Title }} · {{ site.Title }}
+    {{- end -}}
+  </title>
+  {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-logo" href="/">
+        <span class="site-logo__name">{{ site.Params.name }}</span>
+        <span class="site-logo__role">{{ site.Params.role }}</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        {{ with site.Menus.main }}
+        <ul>
+          {{ range . }}
+          {{ $isExternal := or (strings.HasPrefix .URL "http://") (strings.HasPrefix .URL "https://") }}
+          <li>
+            <a href="{{ .URL }}" {{ if and (not $isExternal) (hasPrefix $.RelPermalink .URL) }}class="active"{{ end }}>{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">{{ site.Params.name }}</p>
+        <p class="footer-role">{{ site.Params.role }}</p>
+        <p class="footer-contact">
+          {{ site.Params.location }} · <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+        </p>
+        {{ with site.Params.footer.text }}
+        <p class="footer-note">{{ . }}</p>
+        {{ end }}
+      </div>
+      <div class="footer-links">
+        {{ range site.Params.social }}
+        <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

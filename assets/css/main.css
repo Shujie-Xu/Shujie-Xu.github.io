@@ -1,0 +1,276 @@
+:root {
+  --bg: #fdfbf7;
+  --surface: #ffffff;
+  --text: #1b1f2a;
+  --muted: #6b7280;
+  --accent: #0d3b66;
+  --border: #e5e7eb;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1100px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: inherit;
+}
+
+.site-logo__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.site-logo__role {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  font-weight: 500;
+  color: inherit;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a.active {
+  border-color: var(--accent);
+}
+
+.site-main {
+  flex: 1;
+}
+
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  margin: 0.3rem 0 0.5rem;
+}
+
+.hero-text .lead {
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+}
+
+.hero-text .meta {
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+}
+
+.highlights {
+  margin-top: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.highlights dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.highlights dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hero-photo figure,
+.photo-fallback {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+  min-height: 360px;
+  background: linear-gradient(135deg, #0d3b66, #6a8caf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-fallback span {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.current-work {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.current-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.current-grid article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.current-grid h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.current-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.page {
+  padding: 4rem 0;
+}
+
+.narrow {
+  width: min(760px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.page-header h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header .lead {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.footer-name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer-role,
+.footer-contact,
+.footer-note {
+  margin: 0.2rem 0;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+}

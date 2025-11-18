@@ -1,5 +1,5 @@
----
 title: "Research"
+description: "Text-based empirical projects in housing, political economy, and supply-chain risk."
 ---
 
 ## Working Papers

@@ -1,0 +1,63 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      {{ with .Params.intro.kicker }}
+      <p class="eyebrow">{{ . }}</p>
+      {{ end }}
+      <h1>{{ with .Params.intro.heading }}{{ . }}{{ else }}{{ site.Params.name }}{{ end }}</h1>
+      {{ with .Params.intro.lead }}
+      <p class="lead">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.intro.location }}
+      <p class="meta">{{ . }}</p>
+      {{ end }}
+      <div class="prose">
+        {{ .Content }}
+      </div>
+      {{ with .Params.highlights }}
+      <dl class="highlights">
+        {{ range . }}
+        <div>
+          <dt>{{ .label }}</dt>
+          <dd>{{ .text }}</dd>
+        </div>
+        {{ end }}
+      </dl>
+      {{ end }}
+    </div>
+    <div class="hero-photo">
+      {{ $photoSrc := .Params.photo.src }}
+      {{ $photoExists := and $photoSrc (fileExists (printf "static%s" $photoSrc)) }}
+      {{ if $photoExists }}
+      <figure>
+        <img src="{{ $photoSrc | relURL }}" alt="{{ $.Params.photo.alt | default (printf "Portrait of %s" site.Params.name) }}" loading="lazy" />
+      </figure>
+      {{ else }}
+      <div class="photo-fallback">
+        <span>{{ site.Params.name }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .Params.current }}
+<section class="current-work">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Current Work</p>
+      <h2>Leading applied micro projects with text-based evidence</h2>
+    </div>
+    <div class="current-grid">
+      {{ range . }}
+      <article>
+        <h3>{{ .title }}</h3>
+        <p>{{ .detail }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

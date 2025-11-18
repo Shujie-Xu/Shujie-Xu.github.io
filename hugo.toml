@@ -1,93 +1,65 @@
 # ============================================
-# Hugo Configuration File for Academic Website
+# Hugo Configuration for Custom Academic Site
 # ============================================
 
-# --- 1. Basic Site Settings ---
 baseURL = "https://Shujie-Xu.github.io/"
-languageCode = 'en-us'
-title = 'Shujie XU'
-theme = 'PaperMod'
+languageCode = "en-us"
+title = "Shujie XU"
 
-# --- 2. Main Menu Navigation (删除 About，保留其他) ---
 [menu]
   [[menu.main]]
     identifier = "research"
     name = "Research"
     url = "/research/"
     weight = 10
-  
+
   [[menu.main]]
     identifier = "publications"
     name = "Publications"
     url = "/publications/"
     weight = 20
-  
+
   [[menu.main]]
     identifier = "cv"
     name = "CV"
-    url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
+    url = "/files/CV-Shujie_XU.pdf"
     weight = 30
 
-# --- 3. PaperMod Theme Parameters ---
 [params]
-  defaultTheme = "auto"
-  author = "Shujie XU"
-  description = "Applied Microeconomist studying information frictions and firm behavior"
-  images = ["/profile.jpg"]
+  name = "Shujie Xu"
+  role = "Applied Microeconomics · Computational Text Analysis"
+  location = "Evanston & Chicago"
+  email = "shujiexu1219@outlook.com"
+  description = "Applied microeconomist building text-based measurements for markets and firms."
 
-  [params.profileMode]
-    enabled = false
+  [params.footer]
+    text = "PhD applicant for Fall 2026 · Open to research collaborations"
 
-  # --- 3.3 Social Icons ---
-  [[params.socialIcons]]
-    name = "email"
+  [[params.social]]
+    label = "Email"
     url = "mailto:shujiexu1219@outlook.com"
-  
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/Shujie-Xu"
-  
-  [[params.socialIcons]]
-    name = "linkedin"
+
+  [[params.social]]
+    label = "LinkedIn"
     url = "https://www.linkedin.com/in/shujie-xu/"
-  
-  [[params.socialIcons]]
-    name = "twitter"
+
+  [[params.social]]
+    label = "GitHub"
+    url = "https://github.com/Shujie-Xu"
+
+  [[params.social]]
+    label = "Twitter"
     url = "https://twitter.com/shujie_xu_"
-  
-  [[params.socialIcons]]
-    name = "cv"
+
+  [[params.social]]
+    label = "CV"
     url = "/files/CV-Shujie_XU.pdf"
-    title = "CV"
 
-  # --- 3.4 Post Page Settings ---
-  ShowReadingTime = false
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowLastMod = false
-
-  # --- 3.5 Feature Toggles ---
-  [params.search]
-    enable = true
-
-  # --- 3.6 LaTeX/KaTeX Assets ---
-  [params.assets]
-    disableFingerprinting = true
-    css = ["https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"]
-    js = [
-      "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js",
-      "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    ]
-
-# --- 4. Taxonomies ---
 [taxonomies]
   category = "categories"
   tag = "tags"
   series = "series"
 
-# --- 5. Markup Configuration ---
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
@@ -103,23 +75,22 @@ theme = 'PaperMod'
       block = [['$$', '$$']]
       inline = [['$', '$']]
 
-# --- 6. Output Formats ---
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   term = ["HTML", "RSS"]
 
-# --- 7. Build Settings ---
+[pagination]
+  pagerSize = 10
 [build]
   writeStats = true
 
-# --- 8. Privacy Settings ---
 [privacy]
   [privacy.googleAnalytics]
     disable = true
-  [privacy.twitter]
-    enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
+  [privacy.x]
+    enableDNT = true
