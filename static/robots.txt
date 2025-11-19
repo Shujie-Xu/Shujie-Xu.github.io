@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Shujie-Xu.github.io/sitemap.xml
