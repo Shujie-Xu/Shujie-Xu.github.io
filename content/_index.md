@@ -6,7 +6,7 @@ intro:
   lead: "Joint master's student in Applied Economics (CUHK) and Social & Economic Policy (Northwestern), graduating in December 2025."
   location: "Evanston & Chicago · shujiexu1219@outlook.com"
 photo:
-  src: "/images/profile-placeholder.svg"
+  src: "/images/profile.jpg"
   alt: "Portrait of Shujie Xu"
 highlights:
   - label: "Fields"
