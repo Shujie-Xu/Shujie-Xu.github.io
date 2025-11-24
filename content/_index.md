@@ -2,12 +2,12 @@
 title: "Home"
 intro:
   kicker: "Applied Microeconomics & Computational Methods"
-  heading: "Shujie Xu"
+  heading: "Shujie XU"
   lead: "Joint master's student in Applied Economics (CUHK) and Social & Economic Policy (Northwestern), graduating in December 2025."
   location: "Evanston & Chicago · shujiexu1219@outlook.com"
 photo:
   src: "/images/profile.jpg"
-  alt: "Portrait of Shujie Xu"
+  alt: "Portrait of Shujie XU"
 highlights:
   - label: "Fields"
     text: "Applied micro · political economy · urban and regional · organizational behavior"
