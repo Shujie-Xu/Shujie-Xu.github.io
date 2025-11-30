@@ -17,7 +17,7 @@ I develop a "policy-taker" view of firms where managers respond to political con
 **The Numbers Game: Effects of Listing Price Formats in Housing Bargaining**  
 with Haaris Mateen, Franklin Qian, Ye Zhang, and Tianxiang Zheng
 
-We examine how round versus precise listing prices shape bargaining power in housing markets by combining 80M+ MLS records with HMDA-CoreLogic matched mortgages. I lead the text-based measurement strategy that flags impatient or strategic sellers from listing remarks using Word2Vec embeddings, design the seller sorting index, and run heterogeneity analyses by neighborhood demographics and price segments. The goal is to open up the mechanism behind seemingly behavioral pricing rules with evidence grounded in text and administrative data.
+We examine how round versus precise listing prices shape bargaining power in housing markets by combining 80M+ property listing records from a large proprietary multi-market housing transactions dataset with matched federally mandated mortgage reporting data and proprietary property transaction records. I lead the text-based measurement strategy that flags impatient or strategic sellers from listing remarks using Word2Vec embeddings, design the seller sorting index, and run heterogeneity analyses by neighborhood demographics and price segments. The goal is to open up the mechanism behind seemingly behavioral pricing rules with evidence grounded in text and administrative data.
 
 **Enterprise Supply Chain Risk and Network Status**  
 with Prof. Yue Tang
@@ -29,7 +29,7 @@ We leverage 10,000+ Chinese annual reports to extract firm-year risk language an
 ## Research Experience
 
 **Franklin Qian, UNC Kenan-Flagler** · Mar 2025 – present  
-Design seller sorting measures, build Word2Vec-based impatience scores for MLS text, and lead HMDA-CoreLogic matching to evaluate demographic heterogeneity.
+Design seller sorting measures, build Word2Vec-based impatience scores for property listing remarks, and lead the matching of federally mandated mortgage reporting data with proprietary property transaction records to evaluate demographic heterogeneity.
 
 **Letian Zhang, Harvard Business School / Northwestern Kellogg** · Aug 2024 – Mar 2025  
 Built longitudinal database of 600+ political leaders with coded ideology, constraints, and transitions; assembled a multilingual corpus of 9,000+ political speeches for future text analysis on corporate human-capital responses.
