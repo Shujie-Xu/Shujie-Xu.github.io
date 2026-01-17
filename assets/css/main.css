@@ -26,17 +26,19 @@ body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.75;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.5s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, .site-logo__name {
   font-family: 'Lora', serif;
   font-weight: 600;
   line-height: 1.25;
+  text-wrap: balance;
 }
 
 @keyframes fadeIn {
@@ -60,6 +62,11 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  outline-offset: 3px;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -73,13 +80,14 @@ img {
 .site-header {
   border-bottom: 1px solid var(--border);
   background-color: var(--surface);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 0;
+  padding: 1.05rem 0;
   gap: 1rem;
 }
 
@@ -93,6 +101,7 @@ img {
 .site-logo__name {
   font-size: 1.25rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .site-logo__role {
@@ -103,7 +112,7 @@ img {
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin: 0;
   padding: 0;
 }
@@ -111,12 +120,33 @@ img {
 .site-nav a {
   font-weight: 500;
   color: inherit;
-  padding-bottom: 0.15rem;
-  border-bottom: 2px solid transparent;
+  padding-bottom: 0.25rem;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.site-nav a.active {
-  border-color: var(--accent);
+.site-nav a:hover {
+  text-decoration: none;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .site-main {
@@ -124,7 +154,7 @@ img {
 }
 
 .hero {
-  padding: 6rem 0 4rem;
+  padding: 6.5rem 0 5rem;
 }
 
 .hero-grid {
@@ -135,25 +165,29 @@ img {
 }
 
 .hero-text h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 1.25rem;
   color: var(--text);
+  text-wrap: balance;
 }
 
 .hero-text .lead {
   font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.18rem;
   font-weight: 400;
   color: var(--muted);
   max-width: 34ch;
   margin-bottom: 2rem;
+  text-wrap: balance;
+  line-height: 1.6;
 }
 
 .hero-text .meta {
   color: var(--muted);
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .eyebrow {
@@ -169,40 +203,51 @@ img {
 }
 
 .highlights {
-  margin-top: 1.75rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
+}
+
+.highlights > div {
+  border-left: 2px solid var(--border);
+  padding-left: 1.25rem;
+  transition: border-color 0.3s ease;
+}
+
+.highlights > div:hover {
+  border-left-color: var(--accent);
 }
 
 .highlights dt {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--muted);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
 .highlights dd {
   margin: 0;
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .hero-social {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 .fit-section {
-  padding: 2rem 0;
+  padding: 4rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(13, 59, 102, 0.03);
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  background: radial-gradient(circle at top, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
 }
 
 .fit-statement {
   font-family: 'Lora', serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   text-align: center;
   color: var(--text);
   margin: 0;
@@ -217,7 +262,7 @@ img {
 .fit-label {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--muted);
@@ -247,7 +292,7 @@ img {
   justify-content: center;
   color: var(--text);
   background: var(--surface);
-  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background-color 0.3s ease;
 }
 
 .social-icons a:hover,
@@ -263,23 +308,52 @@ img {
   fill: currentColor;
 }
 
+.hero-photo {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  z-index: -1;
+  transition: transform 0.4s ease, border-color 0.3s ease;
+}
+
+.hero-photo:hover::before {
+  transform: translate(4px, 4px);
+  border-color: var(--accent);
+}
+
 .hero-photo figure,
 .photo-fallback {
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
   min-height: 360px;
   background: linear-gradient(135deg, #0d3b66, #6a8caf);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 0.3s ease;
 }
 
 .hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-photo:hover img {
+  transform: scale(1.01);
 }
 
 .photo-fallback span {
@@ -289,13 +363,13 @@ img {
 }
 
 .current-work {
-  padding: 2.5rem 0 3.5rem;
+  padding: 5rem 0;
 }
 
 .current-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
+  gap: 1.6rem;
   margin-top: 2rem;
 }
 
@@ -304,35 +378,36 @@ img {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    background-color 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .current-grid article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
   border-color: var(--accent);
 }
 
 .current-grid h3 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
   font-size: 1.05rem;
 }
 
 .current-grid p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .page {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .narrow {
@@ -342,17 +417,18 @@ img {
 
 .page-header h1 {
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .page-header .lead {
   color: var(--muted);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.75rem;
 }
 
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--surface);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-inner {
@@ -380,35 +456,42 @@ img {
   justify-content: flex-end;
 }
 
+.site-header,
+.site-footer,
+.current-grid article,
+.social-icons a {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .stagger-load > * {
   opacity: 0;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .stagger-load > *:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: 0.05s;
 }
 
 .stagger-load > *:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .stagger-load > *:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: 0.15s;
 }
 
 .stagger-load > *:nth-child(4) {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .stagger-load > *:nth-child(5) {
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   to {
@@ -435,7 +518,19 @@ img {
   }
 
   .hero {
-    padding-top: 2rem;
+    padding-top: 3rem;
+  }
+
+  .fit-section {
+    padding: 3rem 0;
+  }
+
+  .current-work {
+    padding: 4rem 0;
+  }
+
+  .page {
+    padding: 4rem 0;
   }
 
   .footer-inner {
