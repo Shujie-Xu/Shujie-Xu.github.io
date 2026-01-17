@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="hero">
   <div class="container hero-grid">
-    <div class="hero-text">
+    <div class="hero-text stagger-load">
       {{ with .Params.intro.kicker }}
       <p class="eyebrow">{{ . }}</p>
       {{ end }}
@@ -42,6 +42,15 @@
       </div>
       {{ end }}
     </div>
+  </div>
+</section>
+
+<section class="fit-section">
+  <div class="container narrow">
+    <p class="fit-statement">
+      <span class="fit-label">Research Focus</span>
+      I combine applied microeconomics with text-based measurement to study markets, institutions, and firm behavior.
+    </p>
   </div>
 </section>
 
