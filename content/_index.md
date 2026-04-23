@@ -3,12 +3,14 @@ title: "Home"
 intro:
   kicker: "Applied Microeconomics & Computational Methods"
   heading: "Shujie XU"
-  lead: "M.A. in Applied Economics (CUHK) and Social & Economic Policy (Northwestern), completed Dec 2025."
+  lead: "Incoming Kellogg Research Fellow, Summer 2026.<br>MSc from CUHK and Northwestern, 2025."
   location: "Evanston & Chicago · shujiexu1219@outlook.com"
 photo:
-  src: "/images/profile.jpg"
+  src: "/images/profile.png"
   alt: "Portrait of Shujie XU"
 highlights:
+  - label: "Training"
+    text: "MSc in Applied Economics, CUHK (2025) · MSc in Social & Economic Policy, Northwestern (2025)"
   - label: "Fields"
     text: "Applied micro · political economy · urban and regional · organizational behavior"
   - label: "Methods"
@@ -28,4 +30,4 @@ I study how information design and institutional constraints shape firm and hous
 
 Right now I lead the measurement agenda for a housing bargaining project with Franklin Qian, build political-institution datasets with Letian Zhang, and extend supply-chain risk work with Yue Tang. I'm especially interested in bringing text-based evidence into models of bargaining, sorting, and organizational choice.
 
-I am seeking full-time pre-doctoral RA placements starting Summer 2026 to keep scaling these measurement-driven projects before doctoral study. I plan to apply to Economics PhD programs in the future and welcome conversations about research assistant opportunities and collaborations.
+Starting Summer 2026, I will join Kellogg as a Research Fellow to keep scaling these measurement-driven projects before doctoral study. I plan to apply to Finance PhD programs and welcome conversations about research and collaborations.

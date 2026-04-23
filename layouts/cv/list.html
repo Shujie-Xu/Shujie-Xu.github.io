@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="page cv-page">
+  <div class="container">
+    <header class="page-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="lead">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.updated }}
+      <p class="cv-meta">Last updated {{ . }}</p>
+      {{ end }}
+    </header>
+
+    <div class="cv-viewer" id="cvViewer">
+      <iframe src="{{ .Params.pdf | relURL }}#view=FitH" title="{{ .Title }} — PDF preview" loading="lazy"></iframe>
+      <noscript>
+        <p class="cv-fallback">Your browser cannot preview this PDF inline. <a href="{{ .Params.pdf | relURL }}">Open the PDF</a> instead.</p>
+      </noscript>
+    </div>
+
+    {{ with .Content }}
+    <div class="prose">{{ . }}</div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

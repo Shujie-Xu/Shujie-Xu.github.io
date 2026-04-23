@@ -22,18 +22,18 @@ title = "Shujie XU"
   [[menu.main]]
     identifier = "cv"
     name = "CV"
-    url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
+    url = "/cv/"
     weight = 30
 
 [params]
   name = "Shujie XU"
-  role = "Economist (Future :> ), Research Assistant · M.A. completed Dec 2025"
+  role = "Incoming Kellogg Research Fellow · Economist (Future :>)"
   location = "Evanston & Chicago"
   email = "shujiexu1219@outlook.com"
   description = "Applied microeconomist building text-based measurements for markets and firms."
 
   [params.footer]
-    text = "Seeking Summer 2026 pre-doc RA roles · Future Economics PhD applicant"
+    text = "Incoming Kellogg Research Fellow, Summer 2026 · Future Finance PhD applicant"
 
   [[params.social]]
     label = "Email"
@@ -57,7 +57,7 @@ title = "Shujie XU"
 
   [[params.social]]
     label = "CV"
-    url = "https://shujie-xu.github.io/files/CV-Shujie_XU.pdf"
+    url = "/cv/"
     icon = "file"
 
 [taxonomies]

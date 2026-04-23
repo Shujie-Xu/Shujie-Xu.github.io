@@ -5,9 +5,9 @@
       {{ with .Params.intro.kicker }}
       <p class="eyebrow">{{ . }}</p>
       {{ end }}
-      <h1>{{ with .Params.intro.heading }}{{ . }}{{ else }}{{ site.Params.name }}{{ end }}</h1>
+      <h1>{{ with .Params.intro.heading }}{{ . }}{{ else }}{{ site.Params.name }}{{ end }}<span class="caret" aria-hidden="true"></span></h1>
       {{ with .Params.intro.lead }}
-      <p class="lead">{{ . }}</p>
+      <p class="lead">{{ . | safeHTML }}</p>
       {{ end }}
       {{ with .Params.intro.location }}
       <p class="meta">{{ . }}</p>
@@ -61,14 +61,17 @@
       <p class="eyebrow">Current Work</p>
       <h2>Leading applied micro projects with text-based evidence</h2>
     </div>
-    <div class="current-grid">
-      {{ range . }}
-      <article>
-        <h3>{{ .title }}</h3>
-        <p>{{ .detail }}</p>
-      </article>
+    <ol class="current-list">
+      {{ range $i, $e := . }}
+      <li>
+        <span class="current-num">{{ index (slice "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X") $i }}</span>
+        <div class="current-body">
+          <h3>{{ .title }}</h3>
+          <p>{{ .detail }}</p>
+        </div>
+      </li>
       {{ end }}
-    </div>
+    </ol>
   </div>
 </section>
 {{ end }}
