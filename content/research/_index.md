@@ -1,6 +1,6 @@
 ---
 title: "Research"
-description: "Text-based empirical projects in housing, political economy, and supply-chain risk."
+description: "Empirical projects on information frictions in corporate and household finance."
 ---
 
 ## Working Papers
@@ -31,9 +31,21 @@ We leverage 10,000+ Chinese annual reports to extract firm-year risk language an
 
 ## Research Experience
 
+### Kellogg School of Management, Northwestern University
+
+*Predoctoral Research Fellow · Jul 2026 – present*
+
+Full-time predoctoral fellow, developing measurement-driven research projects in finance ahead of doctoral study.
+
+### Fan Wu, The Chinese University of Hong Kong
+
+*Mar 2026 – Jun 2026*
+
+Built text-based measures of how analysts discuss regulation—GPT-assisted classification of 510K regulatory mentions across 3.7M report paragraphs by type, sentiment, and valuation channel—and prototyped dictionary measures of corporate strategy.
+
 ### Franklin Qian, UNC Kenan-Flagler
 
-*Mar 2025 – present*
+*Mar 2025 – Jun 2026*
 
 Design seller sorting measures, build Word2Vec-based impatience scores for property listing remarks, and lead the matching of federally mandated mortgage reporting data with proprietary property transaction records to evaluate demographic heterogeneity.
 

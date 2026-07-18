@@ -1,33 +1,32 @@
 ---
 title: "Home"
 intro:
-  kicker: "Applied Microeconomics & Computational Methods"
   heading: "Shujie XU"
-  lead: "Incoming Kellogg Research Fellow, Summer 2026.<br>MSc from CUHK and Northwestern, 2025."
+  lead: "Predoctoral Research Fellow, Kellogg School of Management.<br>Dual MSc, CUHK & Northwestern, 2025."
   location: "Evanston & Chicago · shujiexu1219@outlook.com"
 photo:
   src: "/images/profile.png"
   alt: "Portrait of Shujie XU"
 highlights:
   - label: "Training"
-    text: "MSc in Applied Economics, CUHK (2025) · MSc in Social & Economic Policy, Northwestern (2025)"
+    text: "Dual MSc, CUHK & Northwestern (2025) · B.Econ in Finance, SWUFE (2024)"
   - label: "Fields"
-    text: "Applied micro · political economy · urban and regional · organizational behavior"
+    text: "Corporate finance · household finance · information economics"
   - label: "Methods"
-    text: "Text-based measurement, causal inference, network + matching, computational RA workflows"
+    text: "Text-based measurement, causal inference, large-scale data pipelines"
   - label: "Perspective"
-    text: "Curious about how information design, institutions, and incentives rewrite bargaining stories"
+    text: "Information is rarely symmetric; I measure the gap and price its consequences"
 current:
-  - title: "Housing bargaining under listing price formats"
-    detail: "Designing seller sorting indices and heterogeneity tests with large-scale proprietary housing transaction and mortgage reporting data."
-  - title: "Political leadership & firm strategy"
-    detail: "Building political leader and speech datasets to study human-capital investment under institutional shocks."
-  - title: "Supply-chain risk propagation"
-    detail: "Mining Chinese corporate reports to link network position with exposure to trade and policy disruptions."
+  - title: "Information frictions in housing bargaining"
+    detail: "Measuring seller motivation from listing text to test how pricing formats sort households and shift bargaining outcomes."
+  - title: "How markets interpret regulation"
+    detail: "Classifying regulatory discussion across millions of analyst-report paragraphs to study how firms and intermediaries read policy."
+  - title: "Supply-chain risk in corporate disclosure"
+    detail: "Linking risk language in annual reports to network position to trace how shocks propagate through production webs."
 ---
 
-I study how information design and institutional constraints shape firm and household behavior. Across urban, corporate finance, and political economy settings, I build large-scale text pipelines—property listings, annual reports, earnings calls, political speeches—and fuse them with administrative data to test economic mechanisms directly.
+I am a predoctoral research fellow at the Kellogg School of Management, Northwestern University. Trained as an applied microeconomist at CUHK and Northwestern, I work on questions in corporate finance and household finance.
 
-Right now I lead the measurement agenda for a housing bargaining project with Franklin Qian, build political-institution datasets with Letian Zhang, and extend supply-chain risk work with Yue Tang. I'm especially interested in bringing text-based evidence into models of bargaining, sorting, and organizational choice.
+A common thread in my research is information frictions—what market participants know, disclose, and misread, and how that moves prices, contracts, and organizations. To study these frictions directly, I build new measurements from large-scale text—property listings, analyst reports, earnings calls, political speeches—and link them with administrative and transaction data.
 
-Starting Summer 2026, I will join Kellogg as a Research Fellow to keep scaling these measurement-driven projects before doctoral study. I plan to apply to Finance PhD programs and welcome conversations about research and collaborations.
+Before doctoral study in finance, I am spending my predoc years turning these measurement ideas into durable research assets. I welcome conversations about research and collaboration.

@@ -1,28 +1,28 @@
 /* ============================================
-   Design system — quiet, restrained, editorial
+   Design system — cool, minimal, modern
    ============================================ */
 
 :root {
-  --bg: #fcfcfa;
+  --bg: #fcfcfd;
   --surface: #ffffff;
-  --text: #1c1c19;
-  --muted: #71716a;
-  --faint: #a4a49c;
-  --border: #e7e7e0;
-  --accent: #9a4a2a;
+  --text: #16181d;
+  --muted: #5f6570;
+  --faint: #9aa1ab;
+  --border: #e6e8ec;
+  --accent: #2e5aa8;
   --radius: 2px;
   --font-serif: 'Newsreader', Georgia, serif;
   --font-sans: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg: #141412;
-  --surface: #1b1b18;
-  --text: #e8e8e2;
-  --muted: #9b9b92;
-  --faint: #6d6d66;
-  --border: #2a2a26;
-  --accent: #d29b83;
+  --bg: #0d0e11;
+  --surface: #14161a;
+  --text: #e5e7eb;
+  --muted: #959ba5;
+  --faint: #60666f;
+  --border: #23262c;
+  --accent: #8fb0e6;
 }
 
 * {
@@ -35,10 +35,9 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-serif);
-  font-optical-sizing: auto;
-  font-size: 1.0625rem;
-  line-height: 1.75;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
   background-color: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -50,7 +49,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
 h1, h2, h3, h4 {
@@ -64,7 +63,7 @@ h1, h2, h3, h4 {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--muted) 35%, transparent);
   text-underline-offset: 0.2em;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
@@ -215,6 +214,7 @@ img {
 }
 
 .hero-text .lead {
+  font-family: var(--font-serif);
   font-size: 1.15rem;
   line-height: 1.55;
   color: var(--text);
@@ -232,7 +232,7 @@ img {
 
 .prose p {
   margin: 0 0 1.1rem;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: var(--text);
 }
@@ -258,7 +258,7 @@ img {
 
 .highlights dd {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   line-height: 1.55;
   color: var(--text);
 }
@@ -305,6 +305,7 @@ img {
 }
 
 .fit-statement {
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(1.4rem, 2.4vw, 1.85rem);
   font-weight: 450;
@@ -416,7 +417,7 @@ img {
 .current-body p {
   margin: 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.95rem;
   max-width: 62ch;
   line-height: 1.65;
 }
@@ -441,6 +442,7 @@ img {
 }
 
 .page-header .lead {
+  font-family: var(--font-serif);
   font-style: italic;
   color: var(--muted);
   margin: 0;

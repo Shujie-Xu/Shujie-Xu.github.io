@@ -11,8 +11,10 @@
       {{ end }}
     </header>
 
+    {{ $pdf := .Params.pdf | relURL }}
+    {{ $pdfv := crypto.MD5 (readFile (printf "static%s" .Params.pdf)) }}
     <div class="cv-viewer" id="cvViewer">
-      <iframe src="{{ .Params.pdf | relURL }}#view=FitH" title="{{ .Title }} — PDF preview" loading="lazy"></iframe>
+      <iframe src="{{ $pdf }}?v={{ $pdfv }}#view=FitH" title="{{ .Title }} — PDF preview" loading="lazy"></iframe>
       <noscript>
         <p class="cv-fallback">Your browser cannot preview this PDF inline. <a href="{{ .Params.pdf | relURL }}">Open the PDF</a> instead.</p>
       </noscript>

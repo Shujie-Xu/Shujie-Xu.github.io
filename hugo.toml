@@ -8,6 +8,12 @@ title = "Shujie XU"
 
 [menu]
   [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 5
+
+  [[menu.main]]
     identifier = "research"
     name = "Research"
     url = "/research/"
@@ -27,13 +33,13 @@ title = "Shujie XU"
 
 [params]
   name = "Shujie XU"
-  role = "Incoming Kellogg Research Fellow · Economist (Future :>)"
+  role = "Predoctoral Research Fellow, Kellogg School of Management"
   location = "Evanston & Chicago"
   email = "shujiexu1219@outlook.com"
-  description = "Applied microeconomist building text-based measurements for markets and firms."
+  description = "Economist studying how information frictions shape corporate and household finance."
 
   [params.footer]
-    text = "Incoming Kellogg Research Fellow, Summer 2026 · Future Finance PhD applicant"
+    text = "Predoctoral Research Fellow, Kellogg School of Management · Finance PhD applicant"
 
   [[params.social]]
     label = "Email"
