@@ -1,28 +1,31 @@
 /* ============================================
-   Design system — cool, minimal, modern
+   Design system — steel gray, cold, modern
+   serif display + sans body
    ============================================ */
 
 :root {
-  --bg: #fcfcfd;
+  --bg: #f3f4f6;
   --surface: #ffffff;
-  --text: #16181d;
-  --muted: #5f6570;
-  --faint: #9aa1ab;
-  --border: #e6e8ec;
-  --accent: #2e5aa8;
+  --panel: #e9ecf0;
+  --text: #0f1216;
+  --muted: #565e6b;
+  --faint: #939ba7;
+  --border: #dde1e7;
+  --accent: #2456c4;
   --radius: 2px;
   --font-serif: 'Newsreader', Georgia, serif;
   --font-sans: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg: #0d0e11;
-  --surface: #14161a;
-  --text: #e5e7eb;
-  --muted: #959ba5;
-  --faint: #60666f;
-  --border: #23262c;
-  --accent: #8fb0e6;
+  --bg: #0b0e12;
+  --surface: #12161c;
+  --panel: #0e1218;
+  --text: #e8ebf0;
+  --muted: #8f97a3;
+  --faint: #5c636e;
+  --border: #1f242d;
+  --accent: #7fa8f0;
 }
 
 * {
@@ -61,15 +64,14 @@ h1, h2, h3, h4 {
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--muted) 35%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
   text-underline-offset: 0.2em;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
-  color: var(--accent);
   text-decoration-color: var(--accent);
 }
 
@@ -110,7 +112,6 @@ img {
 }
 
 .site-logo {
-  font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -132,7 +133,6 @@ img {
 }
 
 .site-nav a {
-  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -196,7 +196,6 @@ img {
 }
 
 .eyebrow {
-  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -224,7 +223,6 @@ img {
 }
 
 .hero-text .meta {
-  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--muted);
   margin: 0 0 2rem;
@@ -247,7 +245,6 @@ img {
 }
 
 .highlights dt {
-  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -286,10 +283,10 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(0.8) contrast(1.02);
 }
 
 .photo-fallback span {
-  font-family: var(--font-sans);
   color: var(--muted);
   font-size: 0.9rem;
   letter-spacing: 0.08em;
@@ -302,6 +299,8 @@ img {
   padding: 4.5rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  background: var(--panel);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .fit-statement {
@@ -402,10 +401,9 @@ img {
 }
 
 .current-num {
-  font-family: var(--font-sans);
   font-size: 0.85rem;
   font-variant-numeric: tabular-nums;
-  color: var(--faint);
+  color: var(--accent);
 }
 
 .current-body h3 {
@@ -460,7 +458,6 @@ img {
 }
 
 .cv-meta {
-  font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--faint);
   margin: 0.75rem 0 0;
@@ -566,20 +563,17 @@ img {
 
 .footer-name {
   margin: 0 0 0.35rem;
-  font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.95rem;
 }
 
 .footer-contact {
   margin: 0;
-  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--muted);
 }
 
 .footer-note {
-  font-family: var(--font-sans);
   font-size: 0.8rem;
   margin: 0.5rem 0 0;
   color: var(--faint);
