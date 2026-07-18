@@ -1,16 +1,18 @@
 {{ define "main" }}
-<section class="page cv-page">
+<section class="band page-band">
   <div class="container">
-    <header class="page-header">
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.description }}
-      <p class="lead">{{ . }}</p>
-      {{ end }}
-      {{ with .Params.updated }}
-      <p class="cv-meta">Last updated {{ . }}</p>
-      {{ end }}
-    </header>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p class="lead">{{ . }}</p>
+    {{ end }}
+    {{ with .Params.updated }}
+    <p class="cv-meta">Last updated {{ . }}</p>
+    {{ end }}
+  </div>
+</section>
 
+<section class="page-body">
+  <div class="container">
     {{ $pdf := .Params.pdf | relURL }}
     {{ $pdfv := crypto.MD5 (readFile (printf "static%s" .Params.pdf)) }}
     <div class="cv-viewer" id="cvViewer">

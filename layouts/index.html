@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="hero">
+<section class="band hero-band">
   <div class="container hero-grid">
     <div class="hero-text">
       {{ with .Params.intro.kicker }}
@@ -11,19 +11,6 @@
       {{ end }}
       {{ with .Params.intro.location }}
       <p class="meta">{{ . }}</p>
-      {{ end }}
-      <div class="prose">
-        {{ .Content }}
-      </div>
-      {{ with .Params.highlights }}
-      <dl class="highlights">
-        {{ range . }}
-        <div>
-          <dt>{{ .label }}</dt>
-          <dd>{{ .text }}</dd>
-        </div>
-        {{ end }}
-      </dl>
       {{ end }}
       <div class="hero-social">
         {{ partial "social-icons.html" . }}
@@ -45,10 +32,28 @@
   </div>
 </section>
 
-<section class="fit-section">
-  <div class="container narrow">
+<section class="intro">
+  <div class="container">
+    <div class="prose intro-prose">
+      {{ .Content }}
+    </div>
+    {{ with .Params.highlights }}
+    <dl class="highlights">
+      {{ range . }}
+      <div>
+        <dt>{{ .label }}</dt>
+        <dd>{{ .text }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+    {{ end }}
+  </div>
+</section>
+
+<section class="statement-section">
+  <div class="container section-grid">
+    <p class="section-label">Research Focus</p>
     <p class="fit-statement">
-      <span class="fit-label">Research Focus</span>
       I study how information frictions shape the decisions of firms and households&mdash;and build new measurements from text to make those frictions visible.
     </p>
   </div>
@@ -56,22 +61,22 @@
 
 {{ with .Params.current }}
 <section class="current-work">
-  <div class="container">
-    <div class="section-header">
-      <p class="eyebrow">Current Work</p>
-      <h2>Information frictions in corporate and household finance</h2>
+  <div class="container section-grid">
+    <p class="section-label">Current Work</p>
+    <div>
+      <h2 class="section-title">Information frictions in corporate and household finance</h2>
+      <ol class="current-list">
+        {{ range $i, $e := . }}
+        <li>
+          <span class="current-num">{{ printf "%02d" (add $i 1) }}</span>
+          <div class="current-body">
+            <h3>{{ .title }}</h3>
+            <p>{{ .detail }}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ol>
     </div>
-    <ol class="current-list">
-      {{ range $i, $e := . }}
-      <li>
-        <span class="current-num">{{ printf "%02d" (add $i 1) }}</span>
-        <div class="current-body">
-          <h3>{{ .title }}</h3>
-          <p>{{ .detail }}</p>
-        </div>
-      </li>
-      {{ end }}
-    </ol>
   </div>
 </section>
 {{ end }}
