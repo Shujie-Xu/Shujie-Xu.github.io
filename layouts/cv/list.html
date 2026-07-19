@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="band page-band">
+<section class="band page-band band-{{ .Section }}">
   <div class="container">
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}

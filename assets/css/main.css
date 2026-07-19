@@ -546,7 +546,48 @@ img {
 /* ---------- Page bands & bodies ---------- */
 
 .page-band {
-  padding: 6rem 0 4.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 0 4rem;
+}
+
+.page-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(0.9);
+}
+
+.page-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 9, 13, 0.85) 0%, rgba(7, 9, 13, 0.55) 60%, rgba(7, 9, 13, 0.38) 100%);
+}
+
+.page-band .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-band.band-research::before {
+  background-image: url('/images/marina-city.jpg');
+  background-position: center 45%;
+}
+
+.page-band.band-publications::before {
+  background-image: url('/images/campus-path.jpg');
+  background-position: center 42%;
+}
+
+.page-band.band-cv::before {
+  background-image: url('/images/building.jpg');
+  background-position: center 35%;
 }
 
 .page-band h1 {
@@ -751,6 +792,14 @@ img {
   color: var(--band-muted);
 }
 
+.footer-credit {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  margin: 1.25rem 0 0;
+  color: var(--band-muted);
+  opacity: 0.7;
+}
+
 .footer-links .social-icons a {
   color: var(--band-muted);
 }
@@ -844,6 +893,7 @@ img {
   }
 
   .page-band {
+    min-height: 38vh;
     padding: 4rem 0 3.5rem;
   }
 
