@@ -40,7 +40,6 @@
     {{ if and $photoSrc (fileExists (printf "static%s" $photoSrc)) }}
     <figure class="intro-photo reveal">
       <img src="{{ $photoSrc | relURL }}" alt="{{ $.Params.photo.alt | default (printf "Portrait of %s" site.Params.name) }}" loading="lazy" />
-      <figcaption>Fig. 01 — Evanston, 2026</figcaption>
     </figure>
     {{ end }}
   </div>
