@@ -1,58 +1,54 @@
 {{ define "main" }}
-<section class="band hero-band">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      {{ with .Params.intro.kicker }}
-      <p class="eyebrow">{{ . }}</p>
-      {{ end }}
-      <h1>{{ with .Params.intro.heading }}{{ . }}{{ else }}{{ site.Params.name }}{{ end }}</h1>
-      {{ with .Params.intro.lead }}
-      <p class="lead">{{ . | safeHTML }}</p>
-      {{ end }}
-      {{ with .Params.intro.location }}
-      <p class="meta">{{ . }}</p>
-      {{ end }}
-      <div class="hero-social">
-        {{ partial "social-icons.html" . }}
+<section class="band hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="hero-text">
+        {{ with .Params.intro.lead }}
+        <p class="hero-kicker">{{ . | safeHTML }}</p>
+        {{ end }}
+        <h1>{{ with .Params.intro.heading }}{{ . }}{{ else }}{{ site.Params.name }}{{ end }}</h1>
+        <div class="hero-foot">
+          {{ with .Params.intro.location }}
+          <p class="hero-meta">{{ . }}</p>
+          {{ end }}
+          <p class="hero-meta hero-coords">42.0451° N, 87.6877° W</p>
+          {{ partial "social-icons.html" . }}
+        </div>
       </div>
-    </div>
-    <div class="hero-photo">
-      {{ $photoSrc := .Params.photo.src }}
-      {{ $photoExists := and $photoSrc (fileExists (printf "static%s" $photoSrc)) }}
-      {{ if $photoExists }}
-      <figure>
-        <img src="{{ $photoSrc | relURL }}" alt="{{ $.Params.photo.alt | default (printf "Portrait of %s" site.Params.name) }}" loading="lazy" />
-      </figure>
-      {{ else }}
-      <div class="photo-fallback">
-        <span>{{ site.Params.name }}</span>
-      </div>
-      {{ end }}
     </div>
   </div>
 </section>
 
-<section class="intro">
-  <div class="container">
-    <div class="prose intro-prose reveal">
-      {{ .Content }}
-    </div>
-    {{ with .Params.highlights }}
-    <dl class="highlights reveal">
-      {{ range . }}
-      <div>
-        <dt>{{ .label }}</dt>
-        <dd>{{ .text }}</dd>
+<section class="intro" id="intro">
+  <div class="container intro-grid">
+    <div>
+      <div class="prose intro-prose reveal">
+        {{ .Content }}
       </div>
+      {{ with .Params.highlights }}
+      <dl class="highlights reveal">
+        {{ range . }}
+        <div>
+          <dt>{{ .label }}</dt>
+          <dd>{{ .text }}</dd>
+        </div>
+        {{ end }}
+      </dl>
       {{ end }}
-    </dl>
+    </div>
+    {{ $photoSrc := .Params.photo.src }}
+    {{ if and $photoSrc (fileExists (printf "static%s" $photoSrc)) }}
+    <figure class="intro-photo reveal">
+      <img src="{{ $photoSrc | relURL }}" alt="{{ $.Params.photo.alt | default (printf "Portrait of %s" site.Params.name) }}" loading="lazy" />
+      <figcaption>Fig. 01 — Evanston, 2026</figcaption>
+    </figure>
     {{ end }}
   </div>
 </section>
 
-<section class="statement-band">
-  <div class="container section-grid">
-    <p class="section-label">Research Focus</p>
+<section class="statement-band" id="focus">
+  <div class="container">
+    <p class="band-kicker">01 · Research Focus</p>
     <p class="fit-statement reveal">
       I study how information frictions shape the decisions of firms and households&mdash;and build new measurements from text to make those frictions visible.
     </p>
@@ -60,23 +56,21 @@
 </section>
 
 {{ with .Params.current }}
-<section class="current-work">
-  <div class="container section-grid">
-    <p class="section-label">Current Work</p>
-    <div>
-      <h2 class="section-title reveal">Information frictions in corporate and household finance</h2>
-      <ol class="current-list">
-        {{ range $i, $e := . }}
-        <li class="reveal">
-          <span class="current-num">{{ printf "%02d" (add $i 1) }}</span>
-          <div class="current-body">
-            <h3>{{ .title }}</h3>
-            <p>{{ .detail }}</p>
-          </div>
-        </li>
-        {{ end }}
-      </ol>
-    </div>
+<section class="current-work" id="current">
+  <div class="container">
+    <p class="section-kicker">02 · Current Work</p>
+    <h2 class="section-title reveal">Information frictions in corporate and household finance</h2>
+    <ol class="current-list">
+      {{ range $i, $e := . }}
+      <li class="reveal">
+        <span class="current-num">{{ printf "%02d" (add $i 1) }}</span>
+        <div class="current-body">
+          <h3>{{ .title }}</h3>
+          <p>{{ .detail }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
   </div>
 </section>
 {{ end }}
