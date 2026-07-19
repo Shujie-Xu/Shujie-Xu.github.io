@@ -27,6 +27,6 @@ current:
 
 I am a predoctoral research fellow at the Kellogg School of Management, Northwestern University. Trained as an applied microeconomist at CUHK and Northwestern, I work on questions in corporate finance and household finance.
 
-A common thread in my research is information frictions—what market participants know, disclose, and misread, and how that moves prices, contracts, and organizations. To study these frictions directly, I build new measurements from large-scale text—property listings, analyst reports, earnings calls, political speeches—and link them with administrative and transaction data.
+A common thread in my research is information frictions: what people know, what they disclose, and what they misread, and how that moves prices, contracts, and organizations. Much of my work turns large bodies of text into new measurements. Property listings, analyst reports, earnings calls, and political speeches all become data, which I then link to administrative and transaction records.
 
-Before doctoral study in finance, I am spending my predoc years turning these measurement ideas into durable research assets. I welcome conversations about research and collaboration.
+Right now I am turning these measurement ideas into research assets that will outlast the predoc years, before starting a PhD in finance. I am always happy to talk research or collaboration.
