@@ -34,11 +34,11 @@
 
 <section class="intro">
   <div class="container">
-    <div class="prose intro-prose">
+    <div class="prose intro-prose reveal">
       {{ .Content }}
     </div>
     {{ with .Params.highlights }}
-    <dl class="highlights">
+    <dl class="highlights reveal">
       {{ range . }}
       <div>
         <dt>{{ .label }}</dt>
@@ -50,10 +50,10 @@
   </div>
 </section>
 
-<section class="statement-section">
+<section class="statement-band">
   <div class="container section-grid">
     <p class="section-label">Research Focus</p>
-    <p class="fit-statement">
+    <p class="fit-statement reveal">
       I study how information frictions shape the decisions of firms and households&mdash;and build new measurements from text to make those frictions visible.
     </p>
   </div>
@@ -64,10 +64,10 @@
   <div class="container section-grid">
     <p class="section-label">Current Work</p>
     <div>
-      <h2 class="section-title">Information frictions in corporate and household finance</h2>
+      <h2 class="section-title reveal">Information frictions in corporate and household finance</h2>
       <ol class="current-list">
         {{ range $i, $e := . }}
-        <li>
+        <li class="reveal">
           <span class="current-num">{{ printf "%02d" (add $i 1) }}</span>
           <div class="current-body">
             <h3>{{ .title }}</h3>

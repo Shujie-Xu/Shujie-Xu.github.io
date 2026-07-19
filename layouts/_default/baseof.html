@@ -26,7 +26,13 @@
   {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+  <noscript>
+    <style>
+      .reveal { opacity: 1; transform: none; }
+      .hero-text > *, .hero-photo { animation: none; }
+    </style>
+  </noscript>
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 </head>
 
@@ -96,13 +102,29 @@
   <script>
     (function () {
       var toggle = document.getElementById('theme-toggle');
-      if (!toggle) return;
-      toggle.addEventListener('click', function () {
-        var html = document.documentElement;
-        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        try { localStorage.setItem('theme', next); } catch (e) { }
-      });
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var html = document.documentElement;
+          var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          html.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) { }
+        });
+      }
+
+      var els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              en.target.classList.add('in');
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('in'); });
+      }
     })();
   </script>
 </body>
