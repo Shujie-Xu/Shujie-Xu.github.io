@@ -246,20 +246,43 @@ img {
   text-decoration-color: var(--band-text);
 }
 
-/* ---------- Hero: skyline backdrop, left-set card ---------- */
+/* ---------- Hero: silver campus backdrop, left-set card ---------- */
 
 .hero {
-  background:
-    linear-gradient(90deg, rgba(7, 9, 13, 0.86) 0%, rgba(7, 9, 13, 0.62) 55%, rgba(7, 9, 13, 0.45) 100%),
-    url('/images/chicago.jpg') center 30% / cover no-repeat;
+  position: relative;
   min-height: 92vh;
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/images/hero.jpg') center 42% / cover no-repeat;
+  filter: grayscale(1) contrast(1.05) brightness(0.88);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 9, 13, 0.88) 0%, rgba(7, 9, 13, 0.6) 55%, rgba(7, 9, 13, 0.42) 100%);
 }
 
 .hero-body {
+  position: relative;
+  z-index: 1;
   width: 100%;
   padding: 7rem 0 5rem;
+}
+
+.hero-body .container {
+  width: 100%;
+  margin: 0;
+  padding-left: clamp(1.5rem, 5vw, 5rem);
+  padding-right: 1.5rem;
 }
 
 .hero-kicker {
@@ -353,7 +376,7 @@ img {
 .intro-photo img {
   width: 100%;
   border: 1px solid var(--line);
-  filter: saturate(0.85) contrast(1.02);
+  filter: grayscale(0.35) saturate(0.7) contrast(1.03);
 }
 
 .intro-photo figcaption {
@@ -420,13 +443,34 @@ img {
 /* ---------- Statement interlude ---------- */
 
 .statement-band {
-  background: linear-gradient(rgba(7, 9, 13, 0.66), rgba(7, 9, 13, 0.66)),
-    url('/images/interlude.jpg') center 62% / cover no-repeat;
+  position: relative;
+  overflow: hidden;
   color: #f4f4f5;
   min-height: 74vh;
   display: flex;
   align-items: center;
   padding: 8rem 0;
+  background: var(--band);
+}
+
+.statement-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/images/interlude.jpg') center 62% / cover no-repeat;
+  filter: grayscale(0.55) saturate(0.65) brightness(0.9);
+}
+
+.statement-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 9, 13, 0.62);
+}
+
+.statement-band .container {
+  position: relative;
+  z-index: 1;
 }
 
 .fit-statement {
@@ -714,6 +758,14 @@ img {
   font-size: 0.8rem;
   margin: 0.5rem 0 0;
   color: var(--band-muted);
+}
+
+.footer-credit {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  margin: 1.25rem 0 0;
+  color: var(--band-muted);
+  opacity: 0.7;
 }
 
 .footer-links .social-icons a {
