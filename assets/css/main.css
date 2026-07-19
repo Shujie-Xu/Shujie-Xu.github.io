@@ -103,7 +103,34 @@ img {
   margin: 0 auto;
 }
 
-/* ---------- Reveal on scroll ---------- */
+/* ---------- Reveal on scroll & page transitions ---------- */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
+
+.hero::before,
+.statement-band::before,
+.page-band::before {
+  animation: bandFade 0.9s ease-out both;
+}
+
+@keyframes bandFade {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 .reveal {
   opacity: 0;
