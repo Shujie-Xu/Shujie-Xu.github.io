@@ -2,7 +2,7 @@
 title: "Home"
 intro:
   heading: "Shujie XU"
-  lead: "Predoctoral Research Fellow, Kellogg School of Management.<br>Dual MSc, CUHK & Northwestern, 2025."
+  lead: "Predoctoral Research Fellow, Kellogg&nbsp;School&nbsp;of&nbsp;Management.<br>Dual MSc, CUHK & Northwestern, 2025."
   location: "Evanston & Chicago · shujiexu1219@outlook.com"
 photo:
   src: "/images/profile.png"
